@@ -1,0 +1,15 @@
+sequenceDiagram
+Browser->>Server: POST https://studies.cs.helsinki.fi/exampleapp/new_note
+Server-->>Browser: HTTP Status code 302, redirect to the Location: /notes
+Note over Server,Browser: Server ask to the browser to do a HTTP Get request to the address /notes
+Browser->>Server: GET https://studies.cs.helsinki.fi/exampleapp/notes
+Server-->>Browser: HTML document
+Note left of Server: HTML document define the structure of the page and have links for futher requests
+Browser->>Server: GET https://studies.cs.helsinki.fi/exampleapp/main.css
+Server-->>Browser: CSS file
+Browser->>Server: GET https://studies.cs.helsinki.fi/exampleapp/main.js
+Server-->>Browser: JS file
+Note over Server,Browser: JS code is executed and makes a HTTP Get request to /data.json
+Browser->>Server: GET https://studies.cs.helsinki.fi/exampleapp/data.json
+Server-->>Browser: data.json
+Note over Server,Browser: The browser execute the callback function and render the notes

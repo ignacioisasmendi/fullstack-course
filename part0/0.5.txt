@@ -1,0 +1,11 @@
+sequenceDiagram
+Browser->>Server: GET https://studies.cs.helsinki.fi/exampleapp/spa
+Server-->>Browser: HTML File
+Browser->>Server: GET https://studies.cs.helsinki.fi/exampleapp/main.css
+Server-->>Browser: CSS File
+Browser->>Server: GET https://studies.cs.helsinki.fi/exampleapp/spa.js
+Server-->>Browser: JS File
+Note over Server,Browser: The browser execute the JS code and make a request for the notes
+Browser->>Server: GET https://studies.cs.helsinki.fi/exampleapp/data.json
+Server-->>Browser: data.json
+

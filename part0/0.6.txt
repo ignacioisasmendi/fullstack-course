@@ -1,0 +1,6 @@
+sequenceDiagram
+Browser->>Server: POST https://studies.cs.helsinki.fi/exampleapp/new_note_spa
+Server-->>Browser: Respond "201 created"
+Note over Server,Browser: The browser create the new note and rerender the website without reload it
+Browser->>Server: HTTP POST to send the new note to the server
+
